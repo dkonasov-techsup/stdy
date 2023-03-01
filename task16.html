@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">  
+  <title>Task16</title> 
+ </head>
+
+<body>	
+</body>
+<script type="text/javascript">
+
+	(function showMsg(){
+		console.log('here');
+		let surname = prompt('Введите фамилию',[]);
+		let name = prompt('Введите имя',[]);
+		let midname = prompt('Введите отчество',[]);
+		let userFN =  (surname +' '+ name[0] +'.'+ midname[0] +'.').toUpperCase();
+		alert('Добрый день, ' + userFN + ' Мы рады приветствовать вас на сайте ' + document.title);
+	}());
+
+</script>
+</html>
