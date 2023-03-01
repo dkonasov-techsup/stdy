@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <title>Task4</title> 
+ </head>
+ 
+<style type="text/css">
+	body{background-color:#f6f6f6; font-family:Arial; font-weight:300;}
+	.data_area1{display: flex; flex-direction: row;}
+	.data_area1 label{display: flex; align-items: center; height: 28px; margin: 2px 0px;}
+	.title{display: flex; flex-direction: column; width: 180px; justify-content: space-between; align-items: flex-start}
+	.result{display: flex; flex-direction: column;}
+	.textarea,.inputarea{height:28px; resize: none; margin: 2px 0px; font-size: 14px; line-height: 28px;}
+	
+</style>
+
+ <body>
+ 	<div class="data_area1">
+	 	<div class="title">
+	  		<label for="textarea1">Today</label>
+	  		<label for="textarea2">One week later</label>
+	  		<label for="setDate">Set date</label>
+	  		<label for="textarea3">One week later</label>  		
+		</div>
+		 <div class="result">	  		
+	  		<textarea class="textarea" id="textarea1" readonly></textarea>
+	  		<textarea class="textarea" id="textarea2" readonly></textarea>
+	  		<input type="date" name="setDate" class="inputarea" id="dateInput">
+	  		<textarea class="textarea" id="textarea3" readonly></textarea>  		
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+		let tb1 = document.getElementById('textarea1');
+		let tb2 = document.getElementById('textarea2');
+		let tb3 = document.getElementById('textarea3');
+
+		let now = new Date();
+		console.log(now);
+		tb1.innerText = now.toLocaleDateString();
+		
+		let plusWeek = new Date(now.setDate(now.getDate()+7));
+		tb2.innerText = plusWeek.toLocaleDateString();
+
+
+		document.getElementById("dateInput").addEventListener("change", function() {
+		    var input = this.value;
+		    var dateEntered = new Date(input);
+		    console.log(input);
+		    console.log(dateEntered);
+		    
+		    let plusWeek2 = new Date(dateEntered.setDate(dateEntered.getDate()+7));
+		    tb3.innerText = plusWeek2.toLocaleDateString();
+		})
+		
+		// day = now.getDate();
+		// month = now.getMonth();
+		// year = now.getFullYear();		
+
+	</script>
+
+ </body>
+</html>
